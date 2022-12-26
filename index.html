@@ -4,48 +4,78 @@
 <head>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>WebRTC Simple Video-Chat</title>
+  <link rel="stylesheet" href="https://lsong.org/stylesheets/reset.css">
   <style>
-    #chat{
+    #chat {
       display: flex;
+      width: 100%;
     }
+
     #local,
     #remote {
-      width: 300px;
-      border: 1px solid #ccc;
+      width: 100%;
+      height: 100%;
+    }
+
+    #remote {
+      margin-left: 10px;
     }
 
     video {
       width: 100%;
+      display: block;
+      border: 1px solid #000;
+    }
+
+    textarea {
+      min-width: 100%;
+    }
+
+    ul {
+      padding: 0;
+    }
+
+    li {
+      border: 1px solid #ccc;
+    }
+
+    time {
+      margin-right: 10px;
     }
   </style>
-  <script type="module" src="webrtc.js"></script>
+  <script src="https://unpkg.com/mqtt/dist/mqtt.min.js"></script>
+  <script type="module" src="index.js"></script>
 </head>
 
 <body>
   <h1>WebRTC Demo</h1>
-  <div id="chat" >
+  <form id="">
+    <input name="key" type="text" placeholder="input your key here">
+    <button type="submit">join</button>
+  </form>
+  <div id="chat">
     <div id="local">
       <h2>Local</h2>
-      <video id="localVideo" autoplay muted></video>
-      <input id="call" type="button" disabled value="Call" />
-      <input id="answer" type="button" disabled value="Answer" />
-      <input id="end" type="button" disabled value="End" />
+      <video id="localVideo" autoplay muted playsinline></video>
+      <div>
+        <input id="call" type="button" disabled value="Call" />
+        <input id="answer" type="button" disabled value="Answer" />
+        <input id="end" type="button" disabled value="End" />
+      </div>
     </div>
-
     <div id="remote">
       <h2>Remote</h2>
-      <video id="remoteVideo" autoplay></video>
+      <video id="remoteVideo" autoplay playsinline></video>
     </div>
   </div>
-
   <div>
-    <span id="state">N/A</span>
+    <ul id="messages"></ul>
+    <textarea id="message" placeholder="Input message ..."></textarea>
+    <button id="send" disabled>send</button>
   </div>
   <div>
 
   </div>
-
-  <div id="stats-box"></div>
 
 </body>
 

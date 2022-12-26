@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WebRTC Simple Video-Chat</title>
+  <style>
+    #chat{
+      display: flex;
+    }
+    #local,
+    #remote {
+      width: 300px;
+      border: 1px solid #ccc;
+    }
+
+    video {
+      width: 100%;
+    }
+  </style>
+  <script type="module" src="webrtc.js"></script>
+</head>
+
+<body>
+  <h1>WebRTC Demo</h1>
+  <div id="chat" >
+    <div id="local">
+      <h2>Local</h2>
+      <video id="localVideo" autoplay muted></video>
+      <input id="call" type="button" disabled value="Call" />
+      <input id="answer" type="button" disabled value="Answer" />
+      <input id="end" type="button" disabled value="End" />
+    </div>
+
+    <div id="remote">
+      <h2>Remote</h2>
+      <video id="remoteVideo" autoplay></video>
+    </div>
+  </div>
+
+  <div>
+    <span id="state">N/A</span>
+  </div>
+  <div>
+
+  </div>
+
+  <div id="stats-box"></div>
+
+</body>
+
+</html>

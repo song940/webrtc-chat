@@ -1,0 +1,36 @@
+{
+  "name": "webrtc-demo",
+  "version": "0.0.0",
+  "type": "module",
+  "description": "Implement a simple audio/video chat by using WebRTC",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "keywords": [
+    "WebRTC",
+    "Video",
+    "Audio",
+    "JavaScript",
+    "HTML"
+  ],
+  "dependencies": {
+    "kelp": "^2.0.2",
+    "kelp-body": "^1.4.5",
+    "kelp-send": "^1.0.6",
+    "kelp-static": "^1.3.0",
+    "ws": "^1.1.1"
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/song940/webrtc-chat.git"
+  },
+  "author": "Lsong",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/song940/webrtc-chat/issues"
+  },
+  "homepage": "https://github.com/song940/webrtc-chat#readme"
+}
